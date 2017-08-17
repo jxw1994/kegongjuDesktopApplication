@@ -143,7 +143,7 @@ class DataForm extends React.Component {
               label="科研生产(办公)地址"
               hasFeedback
             >
-              {getFieldDecorator('password')(
+              {getFieldDecorator('location')(
                 <TextArea placeholder="单位有多个科研生产(办公)地址的,分别说明单位科研生产(办公)具体地址" autosize={{ minRows: 2, maxRows: 6 }} />                
               )}
             </FormItem>
@@ -152,7 +152,7 @@ class DataForm extends React.Component {
               label="通信地址"
               hasFeedback
             >
-              {getFieldDecorator('password')(
+              {getFieldDecorator('mailAddress')(
                 <TextArea  autosize/> 
               )}
             </FormItem>
@@ -162,7 +162,7 @@ class DataForm extends React.Component {
                 label="邮政编码"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('postcode')(
                   <Input  />
                 )}
               </FormItem>
@@ -173,7 +173,7 @@ class DataForm extends React.Component {
                 label="联系电话"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('phone')(
                   <Input  />
                 )}
               </FormItem>
@@ -184,7 +184,7 @@ class DataForm extends React.Component {
                 label="单位创建时间"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('createTime')(
                   <Input  />
                 )}
               </FormItem>
@@ -196,7 +196,7 @@ class DataForm extends React.Component {
                 style={{'overflow':'auto'}}
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('isIpo')(
                   <RadioGroup defaultValue="1">
                     <RadioButton value="1">是</RadioButton>
                     <RadioButton value="0">否</RadioButton>
@@ -210,7 +210,7 @@ class DataForm extends React.Component {
                 label="注册资金"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('registeredCapital')(
                   <Input  />
                 )}
               </FormItem>
@@ -221,7 +221,7 @@ class DataForm extends React.Component {
                 label="固定总资产"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('fixedAssets')(
                   <Input  />
                 )}
               </FormItem>
@@ -231,7 +231,7 @@ class DataForm extends React.Component {
               label="股权结构"
               hasFeedback
             >
-              {getFieldDecorator('password')(
+              {getFieldDecorator('ownershipStructure')(
                 <TextArea placeholder="主要范围为所有股东名单及持股比例(可另附页)" autosize/>                
               )}
             </FormItem>
