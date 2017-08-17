@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom'
 import { Form, Row, Col, Input, Button, Icon ,Radio } from 'antd';
+import {ExportButton} from './ExportButton';
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -14,6 +15,15 @@ class DataForm extends React.Component {
       this.state = {
          
       }   
+  }
+  retrieveFormData(){
+    var result = {};
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        result = values;
+      }
+    });
+    return result;
   }
   handleSubmit(e){
     e.preventDefault();
@@ -70,7 +80,7 @@ class DataForm extends React.Component {
               label="单位名称"
               hasFeedback
             >
-              {getFieldDecorator('单位名称')(
+              {getFieldDecorator('companyName')(
                 <TextArea placeholder="应填写全称，与单位合法身份证明文件相一致"  autosize/>
               )}
             </FormItem>
@@ -79,7 +89,7 @@ class DataForm extends React.Component {
               label="社会统一信用代码"
               hasFeedback
             >
-              {getFieldDecorator('password')(
+              {getFieldDecorator('creditCode')(
                 <TextArea autosize={{ minRows: 2, maxRows: 6 }} /> 
                 
               )}
@@ -90,7 +100,7 @@ class DataForm extends React.Component {
                 label="单位性质"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('companyType')(
                   <TextArea placeholder="按照营业执照单位法人证书的内容填写" autosize/>
                 )}
               </FormItem>
@@ -101,7 +111,7 @@ class DataForm extends React.Component {
                 label="法人代表"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('legalBody')(
                   <Input  />
                 )}
               </FormItem>
@@ -112,7 +122,7 @@ class DataForm extends React.Component {
                 label="单位人数"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('companyPersonCount')(
                   <Input  />
                 )}
               </FormItem>
@@ -123,7 +133,7 @@ class DataForm extends React.Component {
                 label="涉密人员数"
                 hasFeedback
               >
-                {getFieldDecorator('password')(
+                {getFieldDecorator('secretPersonCount')(
                   <Input  />
                 )}
               </FormItem>
@@ -235,7 +245,7 @@ class DataForm extends React.Component {
               )}
             </FormItem>
             <FormItem {...tailFormItemLayout}>
-              <Button type="primary" htmlType="submit">导出</Button>
+              <ExportButton data={this.retrieveFormData.bind(this)}/>
             </FormItem>
             <FormItem {...tailFormItemLayout}>
               <Button type="primary" htmlType="submit">保存</Button>
