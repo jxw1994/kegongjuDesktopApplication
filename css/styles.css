@@ -1,0 +1,33 @@
+body,html{
+	font-size: 14px;
+	height:100%;
+}
+.lf{
+	float: left;
+}
+.rt{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+#aside{
+	width:200px;
+	min-height:600px;
+	background-color: #ddd;
+}
+#session{
+	margin:5px;
+	width:77%;
+	height:100%;
+	padding:40px 20px;
+	background-color: #fff;
+	border:1px solid #ddd;
+}
+
+div.ant-form-item-label{
+	white-space:pre-wrap;
+	padding-right: 5px;
+	line-height: 22px;
+}
+
