@@ -2,7 +2,6 @@ var util = {};
 util.exportWord = function(data){
     var JSZip = require('jszip');
     var Docxtemplater = require('docxtemplater');
-
     var fs = require('fs');
     var path = require('path');
     //Load the docx file as a binary
@@ -35,11 +34,20 @@ util.exportWord = function(data){
                  .generate({type: 'nodebuffer'});
 
     // buf is a nodejs buffer, you can either write it to a file or do anything else with it.
-    fs.writeFileSync(path.resolve(__dirname, '../output.docx'), buf);
+    fs.writeFileSync(path.resolve(__dirname, '../dist/output.docx'), buf);
 };
+
+
+util.zipAndCrypto = function(){
+    var crypto = require("../crypto/tools");
+    var zip = require("./zip");
+    
+}
+
 util.echo = function(data){
     console.log(data);
 }
-export default util;
+util.zipAndCrypto();
+// export default util;
 
 
